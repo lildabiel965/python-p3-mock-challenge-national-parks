@@ -31,9 +31,9 @@ class TestTrip:
         assert trip.start_date == "May 6th"
 
         # does not mutate start_date if value is not a string
-        # comment out the next two lines if using Exceptions
-        trip.start_date = 2
-        assert trip.start_date == "May 6th"
+        # Use pytest.raises to check for ValueError
+        with pytest.raises(ValueError):
+            trip.start_date = 2
 
         # uncomment the next two lines if using Exceptions
         # with pytest.raises(Exception):
@@ -46,8 +46,9 @@ class TestTrip:
         trip = Trip(matteo, yosemite, "May 5th", "May 9th")
 
         # comment out the next two lines if using Exceptions
-        trip.start_date = "May6th"
-        assert trip.start_date == "May 5th"
+        # Use pytest.raises to check for ValueError
+        with pytest.raises(ValueError):
+            trip.start_date = "May6th"
 
         # uncomment the next two lines if using Exceptions
         # with pytest.raises(Exception):
@@ -74,9 +75,9 @@ class TestTrip:
         assert trip.end_date == "May 10th"
 
         # does not mutate end_date if value is not a string
-        # comment out the next two lines if using Exceptions
-        trip.end_date = 2
-        assert trip.end_date == "May 10th"
+        # Use pytest.raises to check for ValueError
+        with pytest.raises(ValueError):
+            trip.end_date = 2
 
         # uncomment the next two lines if using Exceptions
         # with pytest.raises(Exception):
@@ -89,8 +90,9 @@ class TestTrip:
         trip = Trip(matteo, yosemite, "May 5th", "May 9th")
 
         # comment out the next two lines if using Exceptions
-        trip.end_date = "May8th"
-        assert trip.end_date == "May 9th"
+        # Use pytest.raises to check for ValueError
+        with pytest.raises(ValueError):
+            trip.end_date = "May8th"
 
         # uncomment the next two lines if using Exceptions
         # with pytest.raises(Exception):

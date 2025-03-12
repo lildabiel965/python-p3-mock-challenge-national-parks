@@ -30,9 +30,9 @@ class TestNationalParks:
         """cannot change the name of the national_park"""
         np = NationalPark("under the sea")
 
-        # comment out the next two lines if using Exceptions
-        np.name = "over the sea"
-        assert np.name == "under the sea"
+        # Use pytest.raises to check for AttributeError
+        with pytest.raises(AttributeError):
+            np.name = "over the sea"
 
         # uncomment the next two lines if using Exceptions
         # with pytest.raises(Exception):

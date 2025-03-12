@@ -19,9 +19,9 @@ class TestVisitor:
         assert isinstance(visitor.name, str)
 
         # does not mutate name if value is not a string
-        # comment out the next two lines if using Exceptions
-        visitor.name = 2
-        assert visitor.name == "Bob"
+        # Use pytest.raises to check for ValueError
+        with pytest.raises(ValueError):
+            visitor.name = 2
 
         # does mutate name if value is a valid string
         visitor.name = "Steve"
@@ -36,13 +36,13 @@ class TestVisitor:
         vis = Visitor("Poppy")
         assert vis.name == "Poppy"
 
-        # comment out the next two lines if using Exceptions
-        vis.name = "TooLongTobeValid"
-        assert vis.name == "Poppy"
+        # Use pytest.raises to check for ValueError
+        with pytest.raises(ValueError):
+            vis.name = "TooLongTobeValid"
 
-        # comment out the next two lines if using Exceptions
-        vis.name = ""
-        assert vis.name == "Poppy"
+        # Use pytest.raises to check for ValueError
+        with pytest.raises(ValueError):
+            vis.name = ""
 
         # uncomment the next two lines if using Exceptions
         # with pytest.raises(Exception):
